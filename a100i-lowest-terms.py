@@ -5,8 +5,13 @@
 # return a tuple of 2 integers (numerator, denominator) for 
 # the fraction in lowest terms
 
-def lowestTerms(numerator,denominator):
-
+def lowestTerms(numerator, denominator):
+    fraction = [0, 0]
+    for i in range(1, denominator):
+        if numerator % i == 0 and denominator % i == 0:
+            fraction[0] = numerator / i
+            fraction[1] = denominator / i
+    return tuple(fraction)
 
 
 
